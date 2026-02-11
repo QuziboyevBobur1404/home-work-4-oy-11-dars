@@ -9,14 +9,14 @@ const register = async (req, res) => {
     const { username, email, password } = req.body;
 
     const users = read_file("register.json");
-    const foundedUser = users.find((item) =>  item.email === email);
+    const foundedUser = users.find((item) => item.email === email);
 
     if (foundedUser) {
       return res.status(400).json({
         message: "User already exsist",
       });
     }
-      const hash = await bcrypt.hash(password, 12);
+    const hash = await bcrypt.hash(password, 12);
 
     const newUser = {
       id: v4(),
@@ -43,7 +43,7 @@ const register = async (req, res) => {
 const login = async (req, res) => {
   try {
     const { email, password } = req.body;
-  const users = read_file("register.json");
+    const users = read_file("register.json");
     const foundedUser = users.find((item) => item.email === email);
 
     if (!foundedUser) {
@@ -55,11 +55,15 @@ const login = async (req, res) => {
 
     if (decode) {
       const token = jwt.sign(
-        { role: foundedUser.role, email: foundedUser.email , id: foundedUser.id},
+        {
+          role: foundedUser.role,
+          email: foundedUser.email,
+          id: foundedUser.id,
+        },
         process.env.SECRET,
         {
           expiresIn: "1h",
-        },
+        }
       );
       return res.status(200).json({
         message: "Registered",
@@ -77,5 +81,5 @@ const login = async (req, res) => {
 
 module.exports = {
   register,
-  login
+  login,
 };

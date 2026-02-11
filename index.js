@@ -13,6 +13,7 @@ app.use(express.json());
 app.use(productRouter);
 app.use(authRouter);
 app.use(superadminRouter)
+
 app.listen(PORT, () => {
   console.log("Server is runing at", PORT);
 });
