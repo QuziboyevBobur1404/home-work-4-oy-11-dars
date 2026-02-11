@@ -1,9 +1,9 @@
 const express = require("express");
-require("dotenv").config();
 const cors = require("cors");
 const productRouter = require("./router/todo.routes");
 const authRouter = require("./router/auth.routes");
 const superadminRouter = require("./router/superadmin.routes");
+require("dotenv").config();
 
 const app = express();
 const PORT = process.env.PORT || 3000;

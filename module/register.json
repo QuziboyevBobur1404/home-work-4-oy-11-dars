@@ -5,5 +5,19 @@
         "email": "alivali@gmail.com",
         "password": "$2b$12$n0B4i2LimNzcUqi/sPMZvOGMAWtY3P6J2.D08iAruO3bMOo1VO6R2",
         "role": "user"
+    },
+    {
+        "id": "e5a73868-fd85-430b-b06c-817742d5ad0b",
+        "username": "asadbek",
+        "email": "asadbek@example.com",
+        "password": "$2b$12$UqzMuh/CrzY5Av7QFzMud.EOPzJ0jZfJVvdOF9xE5gCCMP1AA8qxq",
+        "role": "user"
+    },
+    {
+        "id": "9af973e9-e9dc-4809-95a6-157c7ca516e2",
+        "username": "asadbek",
+        "email": "asadbek124@example.com",
+        "password": "$2b$12$o9bgSMFiUXkjy4bVUqhM7ekjiW05QnTIRuQLIFgbxX/Bf2U./lDa2",
+        "role": "user"
     }
 ]

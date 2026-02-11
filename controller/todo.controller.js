@@ -40,7 +40,6 @@ const addProduct = async (req, res) => {
     const { title, time, isDone } = req.body;
 
     const product = read_file("todo.json");
-    console.log(req.user);
 
     product.push({
       id: v4(),
@@ -133,7 +132,7 @@ const deleteProduct = async (req, res) => {
   }
 };
 
-const toggletodo = (req, res) => {
+const toggletodo = async (req, res) => {
   try {
     const { id } = req.params;
     const { isDone } = req.body;
@@ -165,7 +164,7 @@ const toggletodo = (req, res) => {
   }
 };
 
-const removecheckedtodos = (req, res) => {
+const removecheckedtodos = async (req, res) => {
   try {
     const { isDone } = req.body;
     const todos = read_file("todo.json");
@@ -191,7 +190,7 @@ const removecheckedtodos = (req, res) => {
     });
   }
 };
-const TodoStatistic = (req, res) => {
+const TodoStatistic = async (req, res) => {
   try {
     const todos = read_file("todo.json");
     const userTodos = todos.filter((todo) => todo.added_by === req.user.id);
